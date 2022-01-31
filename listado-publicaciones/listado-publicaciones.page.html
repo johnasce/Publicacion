@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>listado-publicaciones</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list *ngFor="let publicacion of publicaciones | async">
+        <ion-list-header> Publicacion </ion-list-header>
+
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://raw.githubusercontent.com/ionic-team/ionic-docs/main/static/demos/api/card/madison.jpg" />
+            </ion-avatar>
+            <ion-label (click)="editar(contacto)">
+                <h2>{{publicacion.publ}}</h2>
+                <h3>{{publicacion.autor}}</h3>
+                <p>{{publicacion.titulo}}</p>
+                <p>{{publicacion.abstract}}</p>
+            </ion-label>
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>

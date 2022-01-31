@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Publicaciones</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-radio-group value="autor" (ionChange)="radioGroupChange($event)">
+            <ion-list-header>
+                <ion-label>Publicacion</ion-label>
+            </ion-list-header>
+            <ion-item (ionSelect)="radioSelect($event)">
+                <ion-label>Autor</ion-label>
+                <ion-radio slot="start" color="success" value="autor"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Titulo</ion-label>
+                <ion-radio slot="start" color="tertiary" value="titulo"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Abstract</ion-label>
+                <ion-radio slot="start" color="danger" value="abstract"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+
+    <section>
+        <header></header>
+        <ion-button expand="block" (click)="buscar()">Buscar</ion-button>
+    </section>
+
+    <ion-item>
+        <ion-label position="floating">Texto Publicacion</ion-label>
+        <ion-input name="txtNombre" [(ngModel)]="publicacion.publ"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Autor</ion-label>
+        <ion-input name="txtDireccion" [(ngModel)]="publicacion.autor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input name="txtTelefono" [(ngModel)]="publicacion.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Abstract</ion-label>
+        <ion-input name="txtTelefono" [(ngModel)]="publicacion.abstract"></ion-input>
+    </ion-item>
+
+    <section>
+        <header></header>
+        <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+    </section>
+</ion-content>
